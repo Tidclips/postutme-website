@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Post-UTME Portal</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Dashboard</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#overview" class="nav-link active">Overview</a></li>
+                    <li><a href="#profile" class="nav-link">Profile</a></li>
+                    <li><a href="#registration" class="nav-link">Registration</a></li>
+                    <li><a href="#payment" class="nav-link">Payment</a></li>
+                    <li><a href="#exams" class="nav-link">Exams</a></li>
+                    <li><a href="#results" class="nav-link">Results</a></li>
+                    <li><a href="#logout" class="nav-link logout">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1 id="page-title">Dashboard</h1>
+                <div class="user-info">
+                    <span id="user-name">Student Name</span>
+                    <img src="https://via.placeholder.com/40" alt="Profile" class="profile-pic">
+                </div>
+            </header>
+
+            <!-- Overview Section -->
+            <section id="overview" class="content-section active">
+                <h2>Welcome to Your Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📋</div>
+                        <h3>Registration Status</h3>
+                        <p id="registration-status">Pending</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💳</div>
+                        <h3>Payment Status</h3>
+                        <p id="payment-status">Pending</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✏️</div>
+                        <h3>Exam Status</h3>
+                        <p id="exam-status">Not Taken</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <h3>Admission Status</h3>
+                        <p id="admission-status">Pending</p>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="actions-grid">
+                        <button class="action-btn" onclick="switchSection('profile')">Complete Profile</button>
+                        <button class="action-btn" onclick="switchSection('payment')">Make Payment</button>
+                        <button class="action-btn" onclick="switchSection('exams')">View Exams</button>
+                        <button class="action-btn" onclick="switchSection('results')">Check Results</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile" class="content-section">
+                <h2>Update Profile</h2>
+                <form id="profile-form" class="form-grid">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" id="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="last-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input type="date" id="dob">
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select id="gender">
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" id="state">
+                    </div>
+                    <div class="form-group">
+                        <label>LGA</label>
+                        <input type="text" id="lga">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Address</label>
+                        <textarea id="address" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </section>
+
+            <!-- Registration Section -->
+            <section id="registration" class="content-section">
+                <h2>Registration Information</h2>
+                <div class="info-card">
+                    <p><strong>Registration Number:</strong> <span id="reg-number">N/A</span></p>
+                    <p><strong>Registration Date:</strong> <span id="reg-date">N/A</span></p>
+                    <p><strong>Status:</strong> <span id="reg-status">Pending</span></p>
+                </div>
+
+                <h3>Upload Exam Scores</h3>
+                <form id="scores-form" class="form-grid">
+                    <div class="form-group">
+                        <label>JAMB Score</label>
+                        <input type="number" id="jamb-score">
+                    </div>
+                    <div class="form-group">
+                        <label>WAEC Score</label>
+                        <input type="number" id="waec-score">
+                    </div>
+                    <div class="form-group">
+                        <label>NECO Score</label>
+                        <input type="number" id="neco-score">
+                    </div>
+                    <div class="form-group">
+                        <label>UTME Score</label>
+                        <input type="number" id="utme-score">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>O-Level Results</label>
+                        <textarea id="o-level" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Scores</button>
+                </form>
+            </section>
+
+            <!-- Payment Section -->
+            <section id="payment" class="content-section">
+                <h2>Payment Portal</h2>
+                <div class="payment-info">
+                    <div class="payment-card">
+                        <h3>Registration Fee</h3>
+                        <p class="price">₦5,000</p>
+                        <p id="payment-desc">Complete your registration and take the Post-UTME examination</p>
+                        <p><strong>Current Status:</strong> <span id="current-payment-status">Pending</span></p>
+                        <button id="pay-btn" class="btn btn-primary">Pay Now</button>
+                    </div>
+                </div>
+
+                <div class="payment-history">
+                    <h3>Payment History</h3>
+                    <div id="payment-list">
+                        <p>No payments yet</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exams Section -->
+            <section id="exams" class="content-section">
+                <h2>Available Exams</h2>
+                <div id="exams-list" class="exams-list">
+                    <p>Loading exams...</p>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="content-section">
+                <h2>Exam Results</h2>
+                <div id="results-list" class="results-list">
+                    <p>No results available yet</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

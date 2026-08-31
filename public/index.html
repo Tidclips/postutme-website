@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-UTME Examination Portal</title>
+    <meta name="description" content="Post-UTME examination portal for student registration, login, exam access, and result checking.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="container nav-wrap">
+            <div class="brand-block">
+                <span class="brand-mark">Post-UTME</span>
+                <span class="brand-sub">Portal</span>
+            </div>
+            <nav class="main-nav" aria-label="Primary navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#exams">Exams</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="btn btn-light" href="#login">Login</a>
+                <a class="btn btn-primary" href="#register">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="home">
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <p class="eyebrow">Admissions & screening</p>
+                    <h1>Take the next step toward your future.</h1>
+                    <p class="hero-text">
+                        Complete your registration, update your profile, make payment, access your exam schedule,
+                        and review your results in one secure student portal.
+                    </p>
+                    <div class="cta-row">
+                        <a class="btn btn-primary" href="#register">Get Started</a>
+                        <a class="btn btn-secondary" href="#login">Student Login</a>
+                    </div>
+                    <ul class="highlight-list">
+                        <li>Online registration</li>
+                        <li>Secure payment</li>
+                        <li>Exam and result tracking</li>
+                    </ul>
+                </div>
+
+                <div class="hero-panel" aria-label="Portal overview">
+                    <div class="panel-card">
+                        <span class="panel-badge">2026 Screening</span>
+                        <h2>Application Status</h2>
+                        <div class="status-row">
+                            <span>Registration</span>
+                            <strong>Open</strong>
+                        </div>
+                        <div class="status-row">
+                            <span>Payment</span>
+                            <strong>Pending</strong>
+                        </div>
+                        <div class="status-row">
+                            <span>Exam</span>
+                            <strong>Scheduled</strong>
+                        </div>
+                        <div class="status-row">
+                            <span>Results</span>
+                            <strong>Live</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="info-band">
+            <div class="container info-grid">
+                <div>
+                    <p class="eyebrow dark">Why students choose us</p>
+                    <h2>Simple access. Clear updates. Better decisions.</h2>
+                </div>
+                <p>
+                    Students can manage every stage of the admission process from one place, reducing delays and
+                    making it easier to stay informed before and after the Post-UTME screening.
+                </p>
+            </div>
+        </section>
+
+        <section id="exams" class="feature-section">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Student journey</p>
+                        <h2>Everything you need.</h2>
+                    </div>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">01</div>
+                        <h3>Register</h3>
+                        <p>Create your student account and complete your application details.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">02</div>
+                        <h3>Pay</h3>
+                        <p>Submit your screening fee and keep track of payment status.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">03</div>
+                        <h3>Take Exam</h3>
+                        <p>Access your scheduled exam and check required instructions beforehand.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">04</div>
+                        <h3>View Results</h3>
+                        <p>Monitor your performance and review your latest academic outcome.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container contact-grid">
+                <div class="contact-copy">
+                    <p class="eyebrow">Need help?</p>
+                    <h2>Contact the admissions team.</h2>
+                    <p>We are here to help with registration, payment, and technical support.</p>
+                    <ul>
+                        <li>Email: admissions@school.edu.ng</li>
+                        <li>Phone: +234 (0) 800 000 0000</li>
+                        <li>Office Hours: Mon - Fri, 8:00 AM - 4:00 PM</li>
+                    </ul>
+                </div>
+
+                <form id="contact-form" class="portal-form contact-form">
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" type="text" required>
+
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" required>
+
+                    <label for="subject">Subject</label>
+                    <input id="subject" name="subject" type="text" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit" class="btn btn-secondary full-width">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="login-modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="login-title">
+            <button type="button" class="close" aria-label="Close login form">×</button>
+            <h3 id="login-title">Student Login</h3>
+            <form id="login-form" class="portal-form">
+                <label for="login-email">Email address</label>
+                <input id="login-email" name="email" type="email" placeholder="you@example.com" required>
+
+                <label for="login-password">Password</label>
+                <input id="login-password" name="password" type="password" placeholder="Enter your password" required>
+
+                <button type="submit" class="btn btn-primary full-width">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="register-modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="register-title">
+            <button type="button" class="close" aria-label="Close registration form">×</button>
+            <h3 id="register-title">Create Account</h3>
+            <form id="register-form" class="portal-form">
+                <div class="two-col">
+                    <div>
+                        <label for="first-name">First name</label>
+                        <input id="first-name" name="firstName" type="text" required>
+                    </div>
+                    <div>
+                        <label for="last-name">Last name</label>
+                        <input id="last-name" name="lastName" type="text" required>
+                    </div>
+                </div>
+
+                <label for="reg-email">Email address</label>
+                <input id="reg-email" name="email" type="email" required>
+
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phoneNumber" type="tel" required>
+
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" required>
+
+                <button type="submit" class="btn btn-primary full-width">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© 2026 Post-UTME Portal</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
