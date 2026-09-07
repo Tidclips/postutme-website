@@ -1,5 +1,5 @@
 // API Configuration
-const API_URL = 'http://localhost/postutme-website/php';
+const API_URL = new URL('../php', window.location.href).toString();
 let currentStudent = null;
 let authToken = null;
 
@@ -51,7 +51,8 @@ async function loadStudentProfile() {
             logout();
         }
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Profile fetch error:', error);
+        showAlert('Unable to fetch. Please check that the server is running and try again.', 'error');
         logout();
     }
 }
@@ -217,7 +218,8 @@ async function updateScores(e) {
             showAlert(data.message || 'Error updating scores', 'error');
         }
     } catch (error) {
-        showAlert('Error: ' + error.message, 'error');
+        showAlert('Unable to fetch. Please check that the server is running and try again.', 'error');
+        console.error('Score update fetch error:', error);
     }
 }
 
@@ -246,7 +248,8 @@ async function initiatePayment() {
             showAlert(data.message || 'Error initiating payment', 'error');
         }
     } catch (error) {
-        showAlert('Error: ' + error.message, 'error');
+        showAlert('Unable to fetch. Please check that the server is running and try again.', 'error');
+        console.error('Payment fetch error:', error);
     }
 }
 

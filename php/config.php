@@ -3,12 +3,13 @@
 
 // Database credentials
 define('DB_HOST', 'localhost');
+define('DB_PORT', 3307);
 define('DB_USER', 'root');
 define('DB_PASSWORD', ''); // Default XAMPP password is empty
-define('DB_NAME', 'postutme_db');
+define('DB_NAME', 'elonmusk_postutme_db');
 
 // Create connection
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
 
 // Check connection
 if ($conn->connect_error) {
@@ -61,8 +62,6 @@ function verifyToken() {
     if (!isset($_SESSION['student_id'])) {
         sendResponse(false, 'Invalid token');
     }
-
-    return $_SESSION['student_id'];
 }
 
 session_start();

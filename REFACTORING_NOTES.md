@@ -99,7 +99,7 @@ Read the comprehensive guide:
 **XAMPP MySQL:**
 - Username: `root`
 - Password: (empty)
-- Database: `postutme_db`
+- Database: `elonmusk_postutme_db`
 
 **Sample Account (after registration):**
 - Email: test@example.com

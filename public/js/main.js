@@ -1,5 +1,5 @@
 // API Configuration
-const API_URL = 'http://localhost/postutme-website/php';
+const API_URL = new URL('../php', window.location.href).toString();
 let currentUser = null;
 
 // DOM Elements
@@ -81,7 +81,8 @@ if (loginForm) {
                 showAlert(data.message || 'Login failed', 'error');
             }
         } catch (error) {
-            showAlert('Error during login: ' + error.message, 'error');
+            showAlert('Unable to fetch. Please check that the server is running and try again.', 'error');
+            console.error('Login fetch error:', error);
         }
     });
 }
@@ -126,7 +127,8 @@ if (registerForm) {
                 showAlert(data.message || 'Registration failed', 'error');
             }
         } catch (error) {
-            showAlert('Error during registration: ' + error.message, 'error');
+            showAlert('Unable to fetch. Please check that the server is running and try again.', 'error');
+            console.error('Registration fetch error:', error);
         }
     });
 }
@@ -159,7 +161,8 @@ if (contactForm) {
                 showAlert(data.message || 'Error sending message', 'error');
             }
         } catch (error) {
-            showAlert('Error: ' + error.message, 'error');
+            showAlert('Unable to fetch. Please check that the server is running and try again.', 'error');
+            console.error('Contact form fetch error:', error);
         }
     });
 }

@@ -170,7 +170,7 @@ postutme-website/                      # Root folder
    - **Apache** → Should turn green ✅
    - **MySQL** → Should turn green ✅
 3. If they don't start:
-   - Check if ports 80 (Apache) or 3306 (MySQL) are in use
+   - Check if ports 80 (Apache) or 3307 (MySQL) are in use
    - Close conflicting applications
    - Try starting again
 
@@ -222,7 +222,7 @@ A database stores all the information:
 
 **Step 3: Verify Database**
 1. On the left sidebar, click **Refresh** (circular arrow)
-2. You should now see `postutme_db` in the database list
+2. You should now see `elonmusk_postutme_db` in the database list
 3. Click on it to expand and view the tables:
    - `students`
    - `exams`
@@ -248,7 +248,7 @@ A database stores all the information:
 
 Run this query to see all tables:
 ```sql
-SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'postutme_db';
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'elonmusk_postutme_db';
 ```
 
 You should see these tables:
@@ -269,9 +269,10 @@ This file connects your PHP to MySQL:
 ```php
 <?php
 define('DB_HOST', 'localhost');      // Database location
+define('DB_PORT', 3307);             // MySQL/MariaDB port
 define('DB_USER', 'root');           // MySQL username (default: root)
 define('DB_PASSWORD', '');           // MySQL password (default: empty)
-define('DB_NAME', 'postutme_db');   // Database name
+define('DB_NAME', 'elonmusk_postutme_db'); // Database name
 ?>
 ```
 
@@ -279,7 +280,8 @@ define('DB_NAME', 'postutme_db');   // Database name
 - Host: `localhost`
 - Username: `root`
 - Password: (empty - no password)
-- Database: `postutme_db`
+- Database: `elonmusk_postutme_db`
+- Port: `3307` in the current configuration; use `3306` for a default XAMPP installation
 
 ### Frontend Configuration: `public/js/main.js` & `public/js/dashboard.js`
 
@@ -344,7 +346,7 @@ const API_URL = 'http://localhost/postutme-website/php';
 ### ✏️ Adding a New Student (Using phpMyAdmin)
 
 1. Go to: `http://localhost/phpmyadmin`
-2. Click `postutme_db` → `students` table
+2. Click `elonmusk_postutme_db` → `students` table
 3. Click **Insert** tab
 4. Fill in the form with student details
 5. Click **Go**
@@ -352,7 +354,7 @@ const API_URL = 'http://localhost/postutme-website/php';
 ### ✏️ Adding an Exam
 
 1. Go to: `http://localhost/phpmyadmin`
-2. Click `postutme_db` → `exams` table  
+2. Click `elonmusk_postutme_db` → `exams` table
 3. Click **Insert** tab
 4. Fill in fields:
    - **title:** e.g., "Mathematics"
@@ -369,7 +371,7 @@ const API_URL = 'http://localhost/postutme-website/php';
 
 To mark a student as admitted:
 1. Go to: `http://localhost/phpmyadmin`
-2. Click `postutme_db` → `students`
+2. Click `elonmusk_postutme_db` → `students`
 3. Find the student row
 4. Click the **Edit** icon (pencil)
 5. Change `admissionStatus` to "admitted"
@@ -511,7 +513,7 @@ state='$state',
 2. Wrong database credentials in `php/config.php`
    - ✅ Check DB_USER is "root"
    - ✅ Check DB_PASSWORD is empty
-   - ✅ Check DB_NAME is "postutme_db"
+   - ✅ Check DB_NAME is "elonmusk_postutme_db"
 
 3. Database doesn't exist
    - ✅ Go to http://localhost/phpmyadmin
@@ -660,7 +662,7 @@ state='$state',
 ### Backup Database
 
 1. Go to http://localhost/phpmyadmin
-2. Click on `postutme_db`
+2. Click on `elonmusk_postutme_db`
 3. Click **Export** tab
 4. Format: SQL
 5. Click **Go**
@@ -669,7 +671,7 @@ state='$state',
 ### Restore Database
 
 1. Delete current database:
-   - Click `postutme_db`
+   - Click `elonmusk_postutme_db`
    - Click **Operations** tab
    - Click **Drop** (delete)
 

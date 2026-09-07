@@ -13,6 +13,9 @@ A web-based Post-UTME examination portal built with **PHP, MySQL, HTML, CSS, and
 
 Visit: **http://localhost/postutme-website/public/index.html**
 
+If Apache uses a custom port, include it in the URL, for example:
+`http://localhost:8080/postutme-website/public/index.html`.
+
 ---
 
 ## 📖 Complete Documentation
@@ -74,6 +77,10 @@ postutme-website/
 4. Create database
 5. Test at http://localhost/postutme-website/public/index.html
 
+The supplied schema creates `elonmusk_postutme_db`. The current PHP configuration
+uses MySQL/MariaDB port `3307`; change `DB_PORT` in `php/config.php` and
+`db_connect.php` to `3306` if your XAMPP installation uses the default port.
+
 ---
 
 **👉 START HERE:** [`SETUP_GUIDE.md`](SETUP_GUIDE.md) has everything you need!
@@ -132,7 +139,7 @@ C:\xampp\htdocs\postutme-website
 
 3. Import the database:
 - Open http://localhost/phpmyadmin
-- Create the database `postutme_db`
+- Import `mysql/database.sql`; it creates `elonmusk_postutme_db`
 - Import `mysql/database.sql`
 
 4. Open the app in the browser:
