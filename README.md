@@ -16,6 +16,15 @@ Visit: **http://localhost/postutme-website/public/index.html**
 If Apache uses a custom port, include it in the URL, for example:
 `http://localhost:8080/postutme-website/public/index.html`.
 
+If `localhost` shows a different XAMPP page or the project returns 404, make
+sure Apache was started from the same XAMPP installation as the project. This
+project is located in `C:\xampp\htdocs\postutme-website`; stop any older Apache
+installation first, then start Apache from `C:\xampp\xampp-control.exe`.
+
+For a development-only alternative, run this from the project folder:
+`C:\xampp\php\php.exe -S 127.0.0.1:8000 -t .`
+Then open `http://127.0.0.1:8000/public/index.html`.
+
 ---
 
 ## 📖 Complete Documentation

@@ -287,10 +287,11 @@ define('DB_NAME', 'elonmusk_postutme_db'); // Database name
 
 Both files use:
 ```javascript
-const API_URL = 'http://localhost/postutme-website/php';
+const API_URL = new URL('../php', window.location.href).toString();
 ```
 
-**Update this if:**
+The relative URL keeps the frontend working when the project folder or Apache
+port changes. **Update the PHP database settings if:**
 - You changed the project folder name
 - You're deploying to a different server
 - You changed the domain name
@@ -310,6 +311,13 @@ const API_URL = 'http://localhost/postutme-website/php';
 1. Open web browser
 2. Type: `http://localhost/postutme-website/public/index.html`
 3. You should see the home page 🎉
+
+If this URL displays a different XAMPP installation or returns 404, stop the
+old Apache process and start Apache from the XAMPP installation at `C:\xampp`.
+Confirm the active Apache port in the XAMPP Control Panel. For a development-
+only server without Apache, run
+`C:\xampp\php\php.exe -S 127.0.0.1:8000 -t C:\xampp\htdocs\postutme-website`
+and open `http://127.0.0.1:8000/public/index.html`.
 
 **Step 3: Test Features**
 
