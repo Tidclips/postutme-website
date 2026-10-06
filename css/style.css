@@ -1,10 +1,10 @@
 :root {
-    --primary: #102a43;
+    --primary: #c60909;
     --secondary: #f0b429;
     --accent: #dbeafe;
-    --bg: #f4f7fb;
+    --bg: #d1ff04;
     --card: #ffffff;
-    --text: #1f2937;
+    --text: #dcb800;
     --muted: #6b7280;
     --success: #166534;
     --success-bg: #dcfce7;
@@ -138,7 +138,7 @@ h1 { font-size: clamp(2.1rem, 4vw, 3.4rem); line-height: 1.08; margin-bottom: 18
 
 .btn-secondary {
     background: var(--secondary);
-    color: #1f2937;
+    color: #d45f11;
 }
 
 .card {
@@ -172,7 +172,7 @@ h1 { font-size: clamp(2.1rem, 4vw, 3.4rem); line-height: 1.08; margin-bottom: 18
 }
 
 .section.dark {
-    background: #0f172a;
+    background: #dab900;
     color: rgba(255,255,255,0.85);
 }
 

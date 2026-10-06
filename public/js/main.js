@@ -1,5 +1,9 @@
 // API Configuration
-const API_URL = new URL('../php', window.location.href).toString();
+const API_URL = (() => {
+    const path = window.location.pathname;
+    const isPublicDir = path.includes('/public/');
+    return new URL(isPublicDir ? '../php' : 'php', window.location.href).toString();
+})();
 let currentUser = null;
 
 // DOM Elements
