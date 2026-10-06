@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $conn->real_escape_string($input['email']);
     $phoneNumber = $conn->real_escape_string($input['phoneNumber']);
     $password = password_hash($input['password'], PASSWORD_DEFAULT);
-    $registrationNumber = 'PUTME' . time();
+    $registrationNumber = 'PUTME' . date('YmdHis') . random_int(1000, 9999);
 
     // Check if student already exists
     $checkQuery = "SELECT id FROM students WHERE email = '$email'";

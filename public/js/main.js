@@ -173,11 +173,15 @@ if (contactForm) {
 
 // Load Exams
 async function loadExams() {
+    if (!examsList) {
+        return;
+    }
+
     try {
         const response = await fetch(`${API_URL}/exams/get_exams.php`);
         const data = await response.json();
 
-        if (data.success && data.data.exams.length > 0) {
+        if (data.success && data.data && Array.isArray(data.data.exams) && data.data.exams.length > 0) {
             examsList.innerHTML = data.data.exams.map(exam => `
                 <div class="exam-card">
                     <h3>${exam.title}</h3>
